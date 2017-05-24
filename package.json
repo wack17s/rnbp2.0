@@ -1,0 +1,44 @@
+{
+  "name": "my",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-eslint": "^6.1.0",
+    "babel-jest": "19.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "eslint": "^3.3.1",
+    "eslint-config-webbylab": "^2.0.1",
+    "eslint-plugin-fetch": "0.0.1",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-more": "^0.1.1",
+    "eslint-plugin-no-require-lodash": "^1.1.0",
+    "eslint-plugin-prefer-spread": "^1.0.3",
+    "eslint-plugin-react": "^6.1.2",
+    "jest-expo": "1.0.1",
+    "react-native-scripts": "0.0.29",
+    "react-test-renderer": "16.0.0-alpha.6"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "node node_modules/jest/bin/jest.js --watch",
+    "lint": "eslint shared App.js"
+  },
+  "jest": {
+    "preset": "jest-expo"
+  },
+  "dependencies": {
+    "expo": "17.0.0",
+    "mobx": "^3.1.10",
+    "mobx-react": "^4.1.8",
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.44.0",
+    "react-navigation": "1.0.0-beta.10",
+    "react-redux": "^5.0.5",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0"
+  }
+}
