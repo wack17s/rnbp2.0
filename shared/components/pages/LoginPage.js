@@ -10,9 +10,13 @@ export default class extends PureComponent {
         this.props.navigation.navigate('Dashboard');
     }
 
+    static navigationOptions = {
+        header: null
+    }
+
     render() {
         return (
-            <View>
+            <View sryle={{ flex: 1, padding: 30 }}>
                 <Text>Login page</Text>
 
                 <TouchableWithoutFeedback onPress={this.handleLogin}>

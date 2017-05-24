@@ -15,6 +15,7 @@ export default StackNavigator(
     },
     {
         initialRouteName: 'Index',
-        headerMode: 'none'
+        swipeEnabled: false,
+        headerMode: 'float'
     }
 );

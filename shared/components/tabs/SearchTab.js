@@ -4,7 +4,7 @@ import { View, Text }           from 'react-native';
 export default class extends PureComponent {
     render() {
         return (
-            <View>
+            <View style={{ flex: 1, backgroundColor: 'blue' }}>
                 <Text>Search</Text>
             </View>
         );
