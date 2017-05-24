@@ -32,7 +32,8 @@ const Tabs = TabNavigator(
         },
         tabBarPosition: 'bottom',
         animationEnabled: false,
-        swipeEnabled: false
+        swipeEnabled: false,
+        paths: (a) => console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', a)
     }
 );
 
@@ -44,9 +45,12 @@ export default class extends Component {
     }
 
     render() {
+        console.log('wtfTABS', this.props)
         return (
             <View style={{ flex: 1 }}>
-                <Tabs />
+                <Tabs
+                    onNavigationStateChange={(a, b) => console.log('onNavigationStateChange11111111111111111', b)}
+                />
             </View>
         );
     }

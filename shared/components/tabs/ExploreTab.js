@@ -3,9 +3,9 @@ import { View }             from 'react-native';
 
 import { TabNavigator } from 'react-navigation';
 
-import LibraryTab1  from './LibraryTab.js';
-import SearchTab1   from './SearchTab.js';
-import HistoryTab1  from './HistoryTab.js';
+import LibraryTab1 from './LibraryTab.js';
+import SearchTab1  from './SearchTab.js';
+import Video       from './Video.js';
 
 const Tabs = TabNavigator(
     {
@@ -15,8 +15,8 @@ const Tabs = TabNavigator(
         Search1: {
             screen: SearchTab1
         },
-        History1: {
-            screen: HistoryTab1
+        Video: {
+            screen: Video
         }
     }, {
         tabBarOptions: {
