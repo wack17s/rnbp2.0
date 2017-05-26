@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Platform } from 'react-native';
+import { View, Dimensions, Text }      from 'react-native';
 
 import { TabNavigator } from 'react-navigation';
 
@@ -34,6 +34,22 @@ const Tabs = TabNavigator(
     }
 );
 
+function renderHeader() {
+    return (
+        <View
+            style={{
+                width: Dimensions.get('window').width,
+                height: 100,
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: 'white'
+            }}
+        >
+            <Text>Custom Header</Text>
+        </View>
+    );
+}
+
 export default class extends Component {
     static propTypes = {
         setCurrentRoute: PropTypes.func
@@ -44,9 +60,8 @@ export default class extends Component {
     }
 
     static navigationOptions = {
-        title: 'Some Title',
         gesturesEnabled: false,
-        headerStyle: { marginTop: Platform.OS === 'android' ? 25 : 0 }
+        header: renderHeader()
     }
 
     render() {

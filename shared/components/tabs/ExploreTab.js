@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { View }                        from 'react-native';
 import { TabNavigator } from 'react-navigation';
 
-import Video from '../../containers/tabs/Explore/VideoContainer.js';
+import Video  from '../../containers/tabs/Explore/VideoContainer.js';
 
 import { tabBarIcon }   from '../../navigation/tabsConfig.js';
 import { tabBarConfig } from './Explore/tabsConfig.js';
@@ -28,7 +28,8 @@ const Tabs = TabNavigator(
 
 export default class extends Component {
     static propTypes = {
-        setCurrentRoute: PropTypes.func
+        setCurrentRoute: PropTypes.func,
+        navigation: PropTypes.object
     }
 
     handleNavigationStateChange = (prevState, nextState) => {
