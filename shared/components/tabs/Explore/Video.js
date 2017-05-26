@@ -23,7 +23,9 @@ export default class extends Component {
     _handleVideoRef = component => {
         const playbackObject = component;
 
-        playbackObject.loadAsync({ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }, {}, true);
+        if (this.state.isOpen) {
+            playbackObject.loadAsync({ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }, {}, true);
+        }
     }
 
     static navigationOptions = {

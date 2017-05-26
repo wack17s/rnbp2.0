@@ -19,7 +19,7 @@ export const tabBarConfig = {
         style            : { backgroundColor: '#404040' },
         iconStyle        : { width: 40, height: 40 },
         indicatorStyle   : {
-            backgroundColor: '#4da6ff',
+            backgroundColor: '#80d4ff',
             width: 34,
             marginLeft: (windowWidth / 5 - 34) / 2,
             marginRight: (windowWidth / 5 - 34) / 2
