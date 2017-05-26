@@ -1,31 +1,28 @@
 import React, { Component, PropTypes } from 'react';
 import { View }                        from 'react-native';
-
 import { TabNavigator } from 'react-navigation';
 
-import Video       from '../../containers/tabs/Explore/VideoContainer.js';
+import Video from '../../containers/tabs/Explore/VideoContainer.js';
 
-import LibraryTab1 from './LibraryTab.js';
-import SearchTab1  from './SearchTab.js';
+import { tabBarIcon }   from '../../navigation/tabsConfig.js';
+import { tabBarConfig } from './Explore/tabsConfig.js';
+
+import SomePage1 from './Explore/SomePage1.js';
+import SomePage2 from './Explore/SomePage2.js';
 
 const Tabs = TabNavigator(
     {
-        Library1: {
-            screen: LibraryTab1
+        SomePage1: {
+            screen: SomePage1
         },
-        Search1: {
-            screen: SearchTab1
+        SomePage2: {
+            screen: SomePage2
         },
         Video: {
             screen: Video
         }
     }, {
-        tabBarOptions: {
-            activeTintColor: '#e91e63'
-        },
-        tabBarPosition: 'top',
-        animationEnabled: false,
-        swipeEnabled: false
+        ...tabBarConfig
     }
 );
 
@@ -39,7 +36,7 @@ export default class extends Component {
     }
 
     static navigationOptions = {
-        title: 'idk'
+        tabBarIcon: tabBarIcon.bind(this, 'Explore')
     }
 
     render() {

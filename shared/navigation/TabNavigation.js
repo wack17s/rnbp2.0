@@ -10,6 +10,8 @@ import SearchTab   from '../components/tabs/SearchTab.js';
 import HistoryTab  from '../components/tabs/HistoryTab.js';
 import BookmarkTab from '../components/tabs/BookmarkTab.js';
 
+import { tabBarConfig } from './tabsConfig.js';
+
 const Tabs = TabNavigator(
     {
         Explore: {
@@ -28,12 +30,7 @@ const Tabs = TabNavigator(
             screen: BookmarkTab
         }
     }, {
-        tabBarOptions: {
-            activeTintColor: '#e91e63'
-        },
-        tabBarPosition: 'bottom',
-        animationEnabled: false,
-        swipeEnabled: false
+        ...tabBarConfig
     }
 );
 

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { Video } from 'expo';
 
 export default class extends Component {
@@ -24,6 +24,14 @@ export default class extends Component {
         const playbackObject = component;
 
         playbackObject.loadAsync({ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }, {}, true);
+    }
+
+    static navigationOptions = {
+        tabBarIcon: (
+            <View style = {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <Text>Video</Text>
+            </View>
+        )
     }
 
     render() {
