@@ -4,7 +4,20 @@ import { Video } from 'expo';
 
 export default class extends Component {
     static propTypes = {
-        navigation: PropTypes.object
+        navigation: PropTypes.object,
+        currentRoute: PropTypes.object
+    }
+
+    state = {
+        isOpen: false
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.currentRoute.routeName === 'Video') this.setState({ isOpen: true });
+    }
+
+    shouldComponentUpdate(nextProps) {
+        return nextProps.currentRoute.routeName === 'Video';
     }
 
     _handleVideoRef = component => {
@@ -14,10 +27,9 @@ export default class extends Component {
     }
 
     render() {
-        console.log('props', this.props)
         return (
             <View style={{ width: 300, height: 400, backgroundColor: 'black' }}>
-                {this.props.navigation.state.routeName === 'Video'
+                {this.state.isOpen
                     ? <Video
                         ref={this._handleVideoRef}
                         style={{ width: 300, height: 400, backgroundColor: 'black' }}

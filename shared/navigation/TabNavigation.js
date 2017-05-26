@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, Platform } from 'react-native';
 
 import { TabNavigator } from 'react-navigation';
 
-import ExploreTab  from '../components/tabs/ExploreTab.js';
+import ExploreTab  from '../containers/tabs/ExploreTabContainer.js';
+
 import LibraryTab  from '../components/tabs/LibraryTab.js';
 import SearchTab   from '../components/tabs/SearchTab.js';
 import HistoryTab  from '../components/tabs/HistoryTab.js';
@@ -32,24 +33,30 @@ const Tabs = TabNavigator(
         },
         tabBarPosition: 'bottom',
         animationEnabled: false,
-        swipeEnabled: false,
-        paths: (a) => console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', a)
+        swipeEnabled: false
     }
 );
 
 export default class extends Component {
+    static propTypes = {
+        setCurrentRoute: PropTypes.func
+    }
+
+    handleNavigationStateChange = (prevState, nextState) => {
+        this.props.setCurrentRoute(nextState.routes[nextState.index]);
+    }
+
     static navigationOptions = {
-        title: 'lol',
+        title: 'Some Title',
         gesturesEnabled: false,
         headerStyle: { marginTop: Platform.OS === 'android' ? 25 : 0 }
     }
 
     render() {
-        console.log('wtfTABS', this.props)
         return (
             <View style={{ flex: 1 }}>
                 <Tabs
-                    onNavigationStateChange={(a, b) => console.log('onNavigationStateChange11111111111111111', b)}
+                    onNavigationStateChange={this.handleNavigationStateChange}
                 />
             </View>
         );

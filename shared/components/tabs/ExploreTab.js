@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import { View }             from 'react-native';
+import React, { Component, PropTypes } from 'react';
+import { View }                        from 'react-native';
 
 import { TabNavigator } from 'react-navigation';
 
+import Video       from '../../containers/tabs/Explore/VideoContainer.js';
+
 import LibraryTab1 from './LibraryTab.js';
 import SearchTab1  from './SearchTab.js';
-import Video       from './Video.js';
 
 const Tabs = TabNavigator(
     {
@@ -29,6 +30,14 @@ const Tabs = TabNavigator(
 );
 
 export default class extends Component {
+    static propTypes = {
+        setCurrentRoute: PropTypes.func
+    }
+
+    handleNavigationStateChange = (prevState, nextState) => {
+        this.props.setCurrentRoute(nextState.routes[nextState.index]);
+    }
+
     static navigationOptions = {
         title: 'idk'
     }
@@ -36,7 +45,9 @@ export default class extends Component {
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <Tabs />
+                <Tabs
+                    onNavigationStateChange={this.handleNavigationStateChange}
+                />
             </View>
         );
     }

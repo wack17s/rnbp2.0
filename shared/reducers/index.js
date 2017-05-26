@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import nav  from './navigation.js';
+import navigation  from './navigation.js';
 
 const rootReducer = combineReducers({
-    nav
+    navigation
 });
 
 export default rootReducer;

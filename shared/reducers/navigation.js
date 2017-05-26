@@ -1,9 +1,10 @@
-import { NavRouter } from '../navigation/TrueNavigation.js';
+import { CURRENT_ROUTE } from '../actions/NavigationActions.js';
 
-const nav = (state = NavRouter.router.getStateForAction(NavRouter.router.getActionForPathAndParams('Dashboard')), action) => {
-    const newState = NavRouter.router.getStateForAction(action, state);
-
-    return newState || state;
-};
-
-export default nav;
+export default function data(state = {}, action) {
+    switch (action.type) {
+        case CURRENT_ROUTE:
+            return { ...action };
+        default:
+            return state;
+    }
+}

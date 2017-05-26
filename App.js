@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Provider }         from 'react-redux';
 
-import TrueNavigation from './shared/containers/TrueNavigationContainer.js';
+import TrueNavigation from './shared/navigation/TrueNavigation.js';
 
 import store from './shared/store/configureStore.js';
 

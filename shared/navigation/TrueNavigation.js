@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import { StackNavigator, addNavigationHelpers } from 'react-navigation';
+import { View }             from 'react-native';
+import { StackNavigator }   from 'react-navigation';
 
 import LoginPage from '../components/pages/LoginPage.js';
 
-import TabNavigation from './TabNavigation.js';
+import TabNavigation from '../containers/navigation/TabNavigationContainer.js';
 
-export const NavRouter = StackNavigator(
+const NavRouter = StackNavigator(
     {
-        Index: {
+        Login: {
             screen: LoginPage
         },
         Dashboard: {
@@ -16,23 +16,16 @@ export const NavRouter = StackNavigator(
         }
     },
     {
-        initialRouteName: 'Index',
-        swipeEnabled: false,
-        headerMode: 'float'
+        initialRouteName: 'Login',
+        swipeEnabled: false
     }
 );
 
-export class TrueNavigationComponent extends Component {
+export default class TrueNavigationComponent extends Component {
     render() {
-        console.log('TRUENAVIGATION', this.props)
         return (
             <View style={{ flex: 1 }}>
-                <NavRouter
-                    navigation={addNavigationHelpers({
-                        dispatch: this.props.dispatch,
-                        state: this.props.nav
-                    })}
-                />
+                <NavRouter />
             </View>
         );
     }
