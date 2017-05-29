@@ -1,22 +1,55 @@
 import React from 'react';
-import { View, Text, Dimensions } from 'react-native';
+import { View, Text, Dimensions, StyleSheet } from 'react-native';
 
 const windowWidth = Dimensions.get('window').width;
 
+const Styles = StyleSheet.create({
+    indicator: {
+        height: 0
+    },
+    tabBar: {
+        backgroundColor: '#404040',
+        height: 60
+    },
+    tab: {
+        padding: 4
+    },
+    innerTabContainer: {
+        width: 50,
+        height: 52
+    },
+    innerTab: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 4
+    },
+    icon: {
+        width: 30,
+        height: 30
+    },
+    label: {
+        fontSize: 8,
+        marginTop: 4
+    },
+    bottomLine: {
+        width: 34,
+        marginLeft: (windowWidth / 5 - 34) / 2,
+        marginRight: (windowWidth / 5 - 34) / 2,
+        height: 2,
+        marginTop: 4
+    }
+});
+
 export function tabBarIcon(title, style) {
     return (
-        <View style = {{ width: 50, height: 52, alignItems: 'center', justifyContent: 'center', marginTop: 4 }}>
-            <View style={{ width: 30, height: 30, backgroundColor: style.tintColor }} />
-            <Text style={{ color: style.tintColor, fontSize: 8, marginTop: 4 }}>{title}</Text>
+        <View style = {[Styles.innerTabContainer, Styles.innerTab]}>
+            <View style={[Styles.icon, { backgroundColor: style.tintColor } ]} />
+            <Text style={[ { color: style.tintColor }, Styles.label]}>{title}</Text>
             <View
-                style={{
-                    backgroundColor: style.focused ? '#80d4ff' : '#404040',
-                    width: 34,
-                    marginLeft: (windowWidth / 5 - 34) / 2,
-                    marginRight: (windowWidth / 5 - 34) / 2,
-                    height: 2,
-                    marginTop: 4
-                }}
+                style={[
+                    Styles.bottomLine,
+                    { backgroundColor: style.focused ? '#80d4ff' : '#404040' }
+                ]}
             />
         </View>
     );
@@ -26,10 +59,10 @@ export const tabBarConfig = {
     tabBarOptions: {
         activeTintColor  : '#808080',
         inactiveTintColor: '#d9d9d9',
-        style            : { backgroundColor: '#404040', height: 60 },
-        iconStyle        : { width: 50, height: 52 },
-        tabStyle         : { padding: 4 },
-        indicatorStyle   : { height: 0 },
+        style            : Styles.tabBar,
+        iconStyle        : Styles.innerTabContainer,
+        tabStyle         : Styles.tab,
+        indicatorStyle   : Styles.indicator,
         showIcon         : true,
         showLabel        : false,
         upperCaseLabel   : false

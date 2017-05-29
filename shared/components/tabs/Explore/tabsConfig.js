@@ -1,38 +1,52 @@
 import React from 'react';
-import { View, Text, Dimensions } from 'react-native';
+import { View, Text, Dimensions, StyleSheet } from 'react-native';
+
+const windowContainer = Dimensions.get('window');
+
+const Styles = StyleSheet.create({
+    indicator: {
+        height: 0
+    },
+    tabBar: {
+        backgroundColor: 'white',
+        height: 40
+    },
+    tab: {
+        width: windowContainer.width / 3,
+        height: 40
+    },
+    innertab: {
+        width: windowContainer.width / 3,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderBottomWidth: 2,
+        backgroundColor: 'white'
+    }
+});
 
 export function tabBarIcon(title, style) {
     return (
         <View
-            style = {{
-                width: windowContainer.width / 3,
-                height: 40,
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderBottomWidth: 2,
-                backgroundColor: 'white',
-                borderColor: style.focused ? '#4da6ff' : 'white'
-            }}
+            style = {[
+                Styles.innertab,
+                { borderColor: style.focused ? '#4da6ff' : 'white' }
+            ]}
         >
             <Text style={{ color: style.tintColor }}>{title}</Text>
         </View>
     );
 }
 
-const windowContainer = Dimensions.get('window');
-
 export const tabBarConfig = {
     tabBarOptions: {
         activeTintColor  : '#808080',
         inactiveTintColor: 'black',
-        indicatorStyle: { height: 0 },
+        indicatorStyle: Styles.indicator,
         upperCaseLabel: false,
-        style         : {
-            backgroundColor: 'white',
-            height: 40
-        },
-        iconStyle     : { width: windowContainer.width / 3, height: 40 },
-        tabStyle      : { width: windowContainer.width / 3, height: 40 },
+        style         : Styles.tabBar,
+        iconStyle     : Styles.tab,
+        tabStyle      : Styles.tab,
         showIcon      : true,
         showLabel     : false
     },

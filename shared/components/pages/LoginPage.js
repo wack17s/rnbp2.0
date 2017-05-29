@@ -1,6 +1,8 @@
 import React, { PureComponent, PropTypes } from 'react';
 import { View, Text, TouchableWithoutFeedback, TextInput } from 'react-native';
 
+import Styles from './LoginPageStyles.js';
+
 export default class extends PureComponent {
     static propTypes = {
         navigation: PropTypes.object
@@ -16,11 +18,11 @@ export default class extends PureComponent {
 
     render() {
         return (
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <View style={Styles.container}>
+                <View style={Styles.container}>
                     <Text style={{ fontSize: 30 }}>Some Logo</Text>
                 </View>
-                <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', width: 300 }}>
+                <View style={[Styles.container, { width: 300 } ]}>
                     <Text>Login in some app</Text>
                     <TextInput
                         style           = {{ height: 80, width: 300 }}
