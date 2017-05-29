@@ -1,17 +1,19 @@
 import React, { PureComponent } from 'react';
-import { View, Text }           from 'react-native';
+import { View }                 from 'react-native';
+
+import FlatList from '../../other/FlatList.js';
 
 import { tabBarIcon } from './tabsConfig.js';
 
 export default class extends PureComponent {
     static navigationOptions = {
-        tabBarIcon: tabBarIcon.bind(this, 'SomePage2')
+        tabBarIcon: tabBarIcon.bind(this, 'FlatList')
     }
 
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <Text>Some Page 2</Text>
+                <FlatList />
             </View>
         );
     }

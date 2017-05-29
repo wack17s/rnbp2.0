@@ -52,5 +52,6 @@ export const tabBarConfig = {
     },
     tabBarPosition  : 'top',
     animationEnabled: false,
-    swipeEnabled    : false
+    swipeEnabled    : false,
+    lazy            : true
 };
