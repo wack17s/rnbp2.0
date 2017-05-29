@@ -2,13 +2,12 @@ import React, { Component, PropTypes } from 'react';
 import { View }                        from 'react-native';
 import { TabNavigator } from 'react-navigation';
 
-import Video  from '../../containers/tabs/Explore/VideoContainer.js';
-
 import { tabBarIcon }   from '../../navigation/tabsConfig.js';
 import { tabBarConfig } from './Explore/tabsConfig.js';
 
 import SomePage1 from './Explore/SomePage1.js';
 import SomePage2 from './Explore/SomePage2.js';
+import SomePage3 from './Explore/SomePage3.js';
 
 const Tabs = TabNavigator(
     {
@@ -18,8 +17,8 @@ const Tabs = TabNavigator(
         SomePage2: {
             screen: SomePage2
         },
-        Video: {
-            screen: Video
+        SomePage3: {
+            screen: SomePage3
         }
     }, {
         ...tabBarConfig
@@ -37,7 +36,7 @@ export default class extends Component {
     }
 
     static navigationOptions = {
-        tabBarIcon: tabBarIcon.bind(this, 'Explore')
+        tabBarIcon: tabBarIcon.bind(this, 'Lists')
     }
 
     render() {

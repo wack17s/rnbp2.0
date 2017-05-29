@@ -9,10 +9,16 @@ const Styles = StyleSheet.create({
     },
     tabBar: {
         backgroundColor: '#404040',
-        height: 60
+        height: 60,
+        elevation: 10,
+        shadowOpacity: 1,
+        shadowColor: 'black',
+        shadowRadius: 10,
+        shadowOffset: { width: 0, height: 0 }
     },
     tab: {
-        padding: 4
+        padding: 4,
+        elevation: 100
     },
     innerTabContainer: {
         width: 50,
@@ -21,11 +27,13 @@ const Styles = StyleSheet.create({
     innerTab: {
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 4
+        marginTop: 4,
+        elevation: 100
     },
     icon: {
         width: 30,
-        height: 30
+        height: 30,
+        elevation: 100
     },
     label: {
         fontSize: 8,

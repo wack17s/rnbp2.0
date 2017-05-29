@@ -7,13 +7,15 @@ import { tabBarIcon } from './tabsConfig.js';
 
 export default class extends PureComponent {
     static navigationOptions = {
-        tabBarIcon: tabBarIcon.bind(this, 'FlatList V.')
+        tabBarIcon: tabBarIcon.bind(this, 'FlatList H.')
     }
 
     render() {
         return (
             <View style={{ flex: 1 }}>
-                <FlatList />
+                <FlatList horizontal />
+                <View style ={{ height: 10 }} />
+                <FlatList horizontal />
             </View>
         );
     }
