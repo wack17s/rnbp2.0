@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { Video } from 'expo';
+
+import { tabBarIcon } from './tabsConfig.js';
 
 export default class extends Component {
     static propTypes = {
@@ -29,11 +31,7 @@ export default class extends Component {
     }
 
     static navigationOptions = {
-        tabBarIcon: (
-            <View style = {{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>Video</Text>
-            </View>
-        )
+        tabBarIcon: tabBarIcon.bind(this, 'Video')
     }
 
     render() {

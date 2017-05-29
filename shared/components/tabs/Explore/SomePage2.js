@@ -5,7 +5,7 @@ import { tabBarIcon } from './tabsConfig.js';
 
 export default class extends PureComponent {
     static navigationOptions = {
-        tabBarIcon: tabBarIcon('SomePage2')
+        tabBarIcon: tabBarIcon.bind(this, 'SomePage2')
     }
 
     render() {

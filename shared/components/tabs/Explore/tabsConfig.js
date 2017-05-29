@@ -1,20 +1,38 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Dimensions } from 'react-native';
 
-export function tabBarIcon(title) {
+export function tabBarIcon(title, style) {
     return (
-        <View style = {{ flex: 1, alignItems: 'center', justifyContent: 'flex-end' }}>
-            <Text>{title}</Text>
+        <View
+            style = {{
+                width: windowContainer.width / 3,
+                height: 40,
+                alignItems: 'center',
+                justifyContent: 'center',
+                borderBottomWidth: 2,
+                backgroundColor: 'white',
+                borderColor: style.focused ? '#4da6ff' : 'white'
+            }}
+        >
+            <Text style={{ color: style.tintColor }}>{title}</Text>
         </View>
     );
 }
 
+const windowContainer = Dimensions.get('window');
+
 export const tabBarConfig = {
     tabBarOptions: {
-        indicatorStyle: { backgroundColor: '#4da6ff' },
-        iconStyle     : { width: 80 },
+        activeTintColor  : '#808080',
+        inactiveTintColor: 'black',
+        indicatorStyle: { height: 0 },
         upperCaseLabel: false,
-        style         : { backgroundColor: 'white' },
+        style         : {
+            backgroundColor: 'white',
+            flexDirection: 'row',
+            width: windowContainer.width,
+            height: 40
+        },
         showIcon      : true,
         showLabel     : false
     },
