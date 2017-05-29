@@ -5,9 +5,9 @@ const windowWidth = Dimensions.get('window').width;
 
 export function tabBarIcon(title, style) {
     return (
-        <View style = {{ width: 50, height: 60, alignItems: 'center', justifyContent: 'center' }}>
+        <View style = {{ width: 50, height: 52, alignItems: 'center', justifyContent: 'center', marginTop: 4 }}>
             <View style={{ width: 30, height: 30, backgroundColor: style.tintColor }} />
-            <Text style={{ color: style.tintColor, fontSize: 8 }}>{title}</Text>
+            <Text style={{ color: style.tintColor, fontSize: 8, marginTop: 4 }}>{title}</Text>
             <View
                 style={{
                     backgroundColor: style.focused ? '#80d4ff' : '#404040',
