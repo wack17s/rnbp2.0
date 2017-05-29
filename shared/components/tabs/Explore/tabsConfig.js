@@ -29,10 +29,10 @@ export const tabBarConfig = {
         upperCaseLabel: false,
         style         : {
             backgroundColor: 'white',
-            flexDirection: 'row',
-            width: windowContainer.width,
             height: 40
         },
+        iconStyle     : { width: windowContainer.width / 3, height: 40 },
+        tabStyle      : { width: windowContainer.width / 3, height: 40 },
         showIcon      : true,
         showLabel     : false
     },

@@ -16,7 +16,7 @@ const NavRouter = StackNavigator(
         }
     },
     {
-        initialRouteName: 'Login',
+        initialRouteName: 'Dashboard',
         swipeEnabled: false
     }
 );
