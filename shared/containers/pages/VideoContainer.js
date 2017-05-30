@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import Video from '../../../components/tabs/Explore/Video.js';
+import Video from '../../components/other/Video.js';
 
 function mapStateToProps(state) {
     return {

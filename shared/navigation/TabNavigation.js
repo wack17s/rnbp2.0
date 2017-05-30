@@ -38,7 +38,8 @@ const Tabs = TabNavigator(
 
 export default class extends Component {
     static propTypes = {
-        setCurrentRoute: PropTypes.func
+        setCurrentRoute: PropTypes.func,
+        navigation     : PropTypes.object
     }
 
     handleNavigationStateChange = (prevState, nextState) => {
@@ -54,7 +55,10 @@ export default class extends Component {
         return (
             <View style={{ flex: 1 }}>
                 <Tabs
-                    onNavigationStateChange={this.handleNavigationStateChange}
+                    onNavigationStateChange = {this.handleNavigationStateChange}
+                    screenProps             = {{
+                        mainNavigation: this.props.navigation
+                    }}
                 />
             </View>
         );

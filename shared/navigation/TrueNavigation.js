@@ -5,6 +5,7 @@ import { StackNavigator }   from 'react-navigation';
 import LoginPage from '../components/pages/LoginPage.js';
 
 import TabNavigation from '../containers/navigation/TabNavigationContainer.js';
+import Video from '../containers/pages/VideoContainer.js';
 
 const NavRouter = StackNavigator(
     {
@@ -13,6 +14,9 @@ const NavRouter = StackNavigator(
         },
         Dashboard: {
             screen: TabNavigation
+        },
+        Video: {
+            screen: Video
         }
     },
     {

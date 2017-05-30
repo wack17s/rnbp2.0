@@ -1,6 +1,6 @@
-import React, { Component, PropTypes } from 'react';
-import { View }                        from 'react-native';
-import { TabNavigator } from 'react-navigation';
+import React, { PureComponent, PropTypes } from 'react';
+import { View }                            from 'react-native';
+import { TabNavigator }                    from 'react-navigation';
 
 import { tabBarIcon }   from '../../navigation/tabsConfig.js';
 import { tabBarConfig } from './Explore/tabsConfig.js';
@@ -25,7 +25,7 @@ const Tabs = TabNavigator(
     }
 );
 
-export default class extends Component {
+export default class extends PureComponent {
     static propTypes = {
         setCurrentRoute: PropTypes.func,
         navigation: PropTypes.object
